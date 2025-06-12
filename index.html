@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+    <nav class="ep_tm_navbar">
+        <!-- Hamburger Button -->
+        <button class="ep_tm_hamburger" onclick="toggleMenu()">Menu</button>
+
+        <!-- Menu -->
+        <ul class="ep_tm_menu" id="epMenu">
+            <li><a href="https://eprint.scholarsrepository.com/index.html">Home</a></li>
+            <li><a href="https://eprint.scholarsrepository.com/search.html">About</a></li>
+            <li><a href="https://eprint.scholarsrepository.com/browse.html">Browse</a>
+                <ul>
+                    <li>
+                        <a href="https://eprint.scholarsrepository.com/view/year/">Browse by Year</a>
+                    </li>
+                    <li>
+                        <a href="https://eprint.scholarsrepository.com/view/subjects/">Browse by Subject</a>
+                    </li>
+                    <li>
+                        <a href="https://eprint.scholarsrepository.com/view/divisions/">Browse by Division</a>
+                    </li>
+                    <li>
+                        <a href="https://eprint.scholarsrepository.com/view/creators/">Browse by Author</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="https://eprint.scholarsrepository.com/policies.html">Repository Policies</a></li>
+            <li><a href="https://eprint.scholarsrepository.com/addcontent.html">Add Scholarly Content</a></li>
+            <li><a href="https://eprint.scholarsrepository.com/contact.html">Contact Us</a></li>
+
+            <!-- Mobile Search Bar -->
+            <li class="ep_tm_searchbar mobile">
+                <form action="search.html" method="get" style="display:flex;">
+                    <input type="text" name="q" class="ep_tm_searchbarbox" placeholder="Search...">
+                    <button type="submit" class="ep_tm_searchbarbutton">Search</button>
+                </form>
+            </li>
+        </ul>
+
+        <!-- Desktop Search Bar -->
+        <form action="search.html" method="get" class="ep_tm_searchbar desktop">
+            <input type="text" name="q" class="ep_tm_searchbarbox" placeholder="Search...">
+            <button type="submit" class="ep_tm_searchbarbutton">Search</button>
+        </form>
+    </nav>
+
+    <main>
+        <p>Hello</p>
+    </main>
+
+</body>
+
+</html>
