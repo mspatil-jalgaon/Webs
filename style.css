@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Verdana, sans-serif;
+  font-size: 14px;
+}
+
+.ep_tm_navbar {
+  background-color: #204f76;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8px;
+  height: auto;
+  font-size: 12px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.ep_tm_menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  font-size: 12px;
+  gap: 16px;
+}
+
+.ep_tm_menu li {
+  margin: 0;
+}
+
+.ep_tm_menu a {
+  display: block;
+  padding: 0 12px;
+  line-height: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+}
+
+.ep_tm_menu a:hover {
+  background-color: #279AE2;
+}
+
+.ep_tm_searchbar {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.ep_tm_searchbarbox {
+  font-size: 14px;
+  padding: 0 4px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.ep_tm_searchbarbutton {
+  padding: 2px 8px;
+  margin-left: 5px;
+  font-size: 14px;
+  height: 20px;
+  background-color: #376d97;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.ep_tm_searchbarbutton:hover {
+  background-color: #508ab9;
+}
+
+.ep_tm_hamburger {
+  display: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 970px) {
+  .ep_tm_navbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+  }
+
+  .ep_tm_hamburger {
+    display: block;
+    background-color: #204F76;
+  }
+
+  .ep_tm_menu {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    background-color: #204F76;
+    gap: 0px;
+  }
+
+  .ep_tm_menu.active {
+    display: flex;
+  }
+
+  .ep_tm_menu li {
+    border-top: 1px solid #204F76;
+  }
+
+  .ep_tm_searchbar.desktop {
+    display: none;
+  }
+
+  .ep_tm_searchbar.mobile {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: #204F76;
+  }
+}
+
+@media (min-width: 971px) {
+  .ep_tm_searchbar.mobile {
+    display: none !important;
+  }
+
+  .ep_tm_searchbar.desktop {
+    display: flex;
+  }
+}
+/* Dropdown Menu Styles */
+.ep_tm_menu li {
+  position: relative;
+}
+
+.ep_tm_menu li ul {
+  display: none;
+  position: absolute;
+  background-color: #204f76;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  z-index: 1000;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ep_tm_menu li:hover > ul {
+  display: block;
+}
+
+.ep_tm_menu li ul li a {
+  padding: 8px 16px;
+  text-align: left;
+  color: white;
+  background-color: #204f76;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.ep_tm_menu li ul li a:hover {
+  background-color: #279AE2;
+}
+
+/* For Mobile: show dropdown when parent is clicked */
+@media (max-width: 970px) {
+  .ep_tm_menu li ul {
+    position: static;
+    box-shadow: none;
+    min-width: 100%;
+  }
+
+  .ep_tm_menu li:hover > ul {
+    display: none;
+  }
+
+  .ep_tm_menu li.active > ul {
+    display: block;
+  }
+}
+.ep_tm_menu li > a:after {
+  content: ' ▼';
+  font-size: 10px;
+}
+
+.ep_tm_menu li:not(:has(ul)) > a:after {
+  content: '';
+}
