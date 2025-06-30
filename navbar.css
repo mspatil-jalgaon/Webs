@@ -41,11 +41,12 @@ body {
   text-decoration: none;
   font-weight: bold;
   color: white;
-  text-align: center;
   font-size: 12px;
+  text-align: center;
 }
 
-.ep_tm_menu a:hover {
+.ep_tm_menu a:hover,
+.ep_tm_menu li ul li a:hover {
   background-color: #279ae2;
 }
 
@@ -102,20 +103,27 @@ body {
   list-style: none;
   z-index: 1000;
   top: 100%;
-  left: 0;
+  left: 0; /* ✅ Dropdown aligned to the left */
   min-width: 200px;
   border-radius: 0 0 4px 4px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left; /* ✅ Text aligned left */
 }
 
 .ep_tm_menu li:hover > ul {
   display: block;
 }
 
-.ep_tm_menu li ul li a:hover {
-  background-color: #279ae2;
+.ep_tm_menu li ul li a {
+  padding: 0 12px;
+  line-height: 32px;
+  font-weight: bold;
+  font-size: 12px;
+  color: white;
+  text-align: left; /* ✅ Text inside dropdown left-aligned */
 }
 
+/* Arrow indicators */
 .ep_tm_menu li > a:after {
   content: ' ▼';
   font-size: 10px;
@@ -169,6 +177,7 @@ body {
     position: static;
     box-shadow: none;
     min-width: 100%;
+    text-align: left;
   }
 
   .ep_tm_menu li:hover > ul {
@@ -177,6 +186,11 @@ body {
 
   .ep_tm_menu li.active > ul {
     display: block;
+  }
+
+  .ep_tm_menu li ul li a {
+    padding: 0 12px;
+    text-align: left;
   }
 }
 
