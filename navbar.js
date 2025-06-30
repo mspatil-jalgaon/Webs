@@ -2,6 +2,7 @@ function toggleMenu() {
   const menu = document.getElementById('epMenu');
   menu.classList.toggle('active');
 }
+
 // Toggle submenus in mobile view
 document.addEventListener('DOMContentLoaded', function () {
   const parentItems = document.querySelectorAll('.ep_tm_menu > li');
